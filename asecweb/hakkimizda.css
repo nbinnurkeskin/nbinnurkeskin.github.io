@@ -1,0 +1,433 @@
+/* Genel Stiller */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --text-color: #333;
+    --light-bg: #f5f6fa;
+    --white: #ffffff;
+    --shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+body {
+    padding-top: 80px;
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hakkımızda Header Bölümü */
+.about-header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.about-header p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    background-color: var(--light-bg);
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+    background-color: var(--light-bg);
+}
+
+.nav-links a i {
+    font-size: 1rem;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown > a .fa-chevron-down {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    /* Menünün açık kalması için bir gecikme ekleyelim */
+    animation: fadeInStay 0.3s ease forwards;
+}
+
+/* Dropdown menüsü üzerine gelince de açık kalmasını sağlayalım */
+.dropdown-menu:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light-bg);
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+@keyframes fadeInStay {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dropdown menüye geçiş için boşluk ekleyelim */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Menüye geçiş için boşluk */
+    background: transparent;
+}
+
+/* Vizyon ve Misyon Bölümü */
+.vision-mission {
+    margin-bottom: 4rem;
+}
+
+.vision-mission .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.vision, .mission {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.vision:hover, .mission:hover {
+    transform: translateY(-5px);
+}
+
+.vision h3, .mission h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vision i, .mission i {
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+.vision p, .mission p {
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Değerlerimiz Bölümü */
+.values {
+    padding: 4rem 0;
+}
+
+.values h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.values h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    background: var(--light-bg);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover i {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: rotateY(360deg);
+}
+
+.value-card h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .about-header {
+        padding: 3rem 0;
+    }
+
+    .about-header h2 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .vision h3, .mission h3 {
+        font-size: 1.5rem;
+    }
+
+    .vision i, .mission i {
+        font-size: 1.5rem;
+    }
+
+    .values h3 {
+        font-size: 1.8rem;
+    }
+
+    .value-card i {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header {
+        padding: 2rem 0;
+    }
+
+    .about-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .vision, .mission {
+        padding: 1.5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 968px) {
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem;
+        flex-direction: column;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        gap: 0.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        display: none;
+        padding: 0.5rem 0 0.5rem 2rem;
+        animation: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown > a {
+        justify-content: space-between;
+    }
+
+    .dropdown > a .fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.active > a .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .features h2,
+    .upcoming-events h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+    }
+}

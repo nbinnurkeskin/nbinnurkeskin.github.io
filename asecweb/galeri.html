@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - ASEC Kulübü</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="galeri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="fotograflar/logo.jpg" alt="ASEC Logo">
+                <h1>ASEC Kulübü</h1>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i>AnaSayfa</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-info-circle"></i> Hakkımızda <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="hakkimizda.html">Kulüp Hakkında</a></li>
+                            <li><a href="takimlar.html"><i class="fas fa-users"></i> Takımlar</a></li>
+                            <li><a href="galeri.html" class="active"><i class="fas fa-images"></i> Galeri</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="duyurular.html"><i class="fas fa-bullhorn"></i> Duyurular</a></li>
+                    <li><a href="etkinlikler.html"><i class="fas fa-calendar-alt"></i> Etkinlikler</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="iletisim.html"><i class="fas fa-envelope"></i> İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main>
+        <section class="gallery-header">
+            <div class="container">
+                <h2>Galeri</h2>
+                <p>ASEC Kulübü etkinliklerinden kareler ve özel anlar</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="events">Etkinlikler</button>
+                    <button class="filter-btn" data-filter="workshops">Atölyeler</button>
+                    <button class="filter-btn" data-filter="teams">Takım Çalışmaları</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-grid">
+            <div class="container">
+                <div class="gallery-items">
+                    <!-- Etkinlik Fotoğrafları -->
+                    <div class="gallery-item" data-category="events">
+                        <img src="images/gallery/event1.jpg" alt="Etkinlik 1">
+                        <div class="gallery-item-info">
+                            <h3>Siber Güvenlik Konferansı</h3>
+                            <p>Aralık 2023</p>
+                            <a href="images/gallery/event1.jpg" class="lightbox-trigger">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Daha fazla galeri öğesi eklenebilir -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Bölümü -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p><i class="fas fa-envelope"></i> info@aseckulubu.com</p>
+                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> Teknoloji Fakültesi, Üniversite Kampüsü</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ASEC Kulübü. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
