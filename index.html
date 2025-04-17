@@ -1,45 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stiller</title>
-    <style>
-        /* Genel Sayfa Stili */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            margin: 50px;
-            padding: 20px;
-        }
-
-        /* Başlık Stili */
-        h2 {
-            color: #2c3e50;
-            font-size: 28px;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        /* Paragraf Stili */
-        p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 20px auto;
-            line-height: 1.6;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>Test Score Array</title>
+		<link rel="stylesheet" href="kesikkeskin.css" />
+		<script src="kesikkeskin.js"></script>
+	</head>
 <body>
-    <h2>Nilgün Binnur Keskin</h2>
-    <p>Binnur, 1 Nisan 2003'te Edirne'de doğdu. Şu anda üniversite öğrencisi olarak eğitimine devam ediyor. Akademik hayatına odaklanırken aynı zamanda kendini geliştirmeyi ve yeni şeyler öğrenmeyi hedefliyor.</p>
+    <header>
+		<h1>Test Scores</h1>	
+		<!-- For people who don't have JavaScript enabled-->
+		<noscript>This web page requires JavaScript to be enabled on your browser.</noscript>
+	</header>
+
+	<main>
+		<h1>Use a Test Score array</h1>
+		
+		<label for="name">Name:</label>
+		<input type="text" id="name"><br>
+			
+		<label for="score">Score:</label>
+		<input type="text" id="score"><br>
+		
+		<label>&nbsp;</label>
+		<input type="button" id="add" value="Add to Array" >
+		<input type="button" id="display_results" value="Display Results" >
+		<input type="button" id="display_scores" value="Display Scores" ><br>
+		
+		<div id="results"></div>
+		<table id="scores_table"></table>
+	</main>
+	
+	
+
 </body>
 </html>
